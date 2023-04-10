@@ -19,5 +19,18 @@ FORMATMESSAGE('%s',DATENAME(WEEKDAY, CAST(CreationDate AS DATE)))
 SELECT *
 FROM [data_analysis_stack_exchange_movies].[dbo].[Comments]
 where CONVERT(DATE, creationDate) = '2012-12-19'
+-- Advanced Analysis QUESTIONS --
+Q1.Display the number of votes for each post title*/
+SELECT pst.Title,count(*) number_of_votes
+FROM [data_analysis_stack_exchange_movies].[dbo].[Votes] as vt
+join
+[data_analysis_stack_exchange_movies].[dbo].posts as pst
+on 
+vt.Id=pst.Id
+group by
+pst.Title
+order by
+count(*)
+desc
 
 
