@@ -1,4 +1,4 @@
-# SQL Data Analysis Exercises – Stack Exchange
+# The Zuber Database
 # Introduction
 Stack Exchange Is a network of sites, allowing different communities learn and share their knowledge.
 Movies & TV Stack Exchange – is one of these sites, focused entirely on questions and answers regarding movies and series. The following database is built according to its structure, and simulates some of the data it has.
