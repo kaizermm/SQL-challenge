@@ -89,28 +89,15 @@ The details of the users who commented / wrote a post / voted
  </details>
 
 # :speech_balloon:ANALYSIS QUESTIONS
-1.How many post were made each year ?
+1.Find the number of taxi rides for each taxi company for November 15-16, 2017. Name the resulting field trips_amount and print it along with the company_name field. Sort the results by the trips_amount field in descending order. **
 
-2.How many votes were made in each day of the week (Sunday, Monday, Tuesday, etc.) ?
+2.Find the number of rides for every taxi company whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. Name the resulting variable trips_amount. Group the results by the company_name field.
 
-3.List all comments created on September 19th, 2012
+3.In November 2017, the most popular taxi companies were Flash Cab and Taxi Affiliation Services. Find the number of rides for these two companies and name the resulting variable trips_amount. Join the rides for all other companies in the group "Other." Group the data by taxi company names. Name the field with taxi company names company. Sort the result in descending order by trips_amount.
 
-4.List all users under the age of 33, living in London
+4.Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.
 
-# :speech_balloon: ADVANCED ANALYSIS QUESTIONS
-1.Display the number of votes for each post title
+5.For each hour, retrieve the weather condition records from the weather_records table. Using the CASE operator, break all hours into two groups: "Bad" if the description field contains the words "rain" or "storm," and "Good" for others. Name the resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
 
-2.Display posts with comments created by users living in the same location as the post creator.
-
-3.How many users have never voted ?
-
-4.Display all posts having the highest amount of comments
-
-5.For each post, how many votes are coming from users living in Canada ? What’s their percentage of the total number of votes
-
-6.How many hours in average, it takes to the first comment to be posted after a creation of a new post
-
-7.Whats the most common post tag ?
-
-8.Create a pivot table displaying how many posts were created for each year (Y axis) and each month (X axis)
+6.Retrieve from the trips table all the rides that started in the Loop (neighborhood_id: 50) and ended at O'Hare (neighborhood_id: 63) on a Saturday. Get the weather conditions for each ride. Use the method you applied in the previous task. Also retrieve the duration of each ride. Ignore rides for which data on weather conditions is not available.
  
