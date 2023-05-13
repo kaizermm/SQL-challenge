@@ -102,5 +102,6 @@ View Table
 
 ## **:dart: INSIGHTS GENERATED**
 1.Bad weather conditions between 2017-11-18 12:00:00 AM and 2017-11-18 7:00:00 PM resulted in lower ride durations
+
 2.Between Flash Cab and Taxi Affiliation Services.Flash Cab has higher trip amount
  
