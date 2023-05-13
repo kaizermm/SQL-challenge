@@ -4,9 +4,8 @@
 --------------------------------------------------------------------------
 -- Analysis QUESTIONS --
 -------------------------------------------------------------------------
--- Q1.
-Print the company_name field. Find the number of taxi rides for each taxi company for November 15-16, 2017, name the resulting field trips_amount and print it, too. 
-Sort the results by the trips_amount field in descending order. ?--
+/* Q1.Print the company_name field. Find the number of taxi rides for each taxi company for November 15-16, 2017, name the resulting field trips_amount and print it, too. 
+Sort the results by the trips_amount field in descending order. ?*/
 /* --------- SOLUTION --------- */
 select cabs.company_name as company_name,count(trips.trip_id) as trips_amount
 from cabs
@@ -26,8 +25,8 @@ The GROUP BY clause groups the results by company name, and the COUNT function i
 Finally, the results are sorted in descending order based on the number of trips made by each company.
 /*
 
--- Q2.Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
-Name the resulting variable trips_amount. Group the results by the company_name field.--
+/* Q2.Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
+Name the resulting variable trips_amount. Group the results by the company_name field.*/
 /* --------- SOLUTION --------- */
 select 
 company_name,count( trips.trip_id) as trips_amount
@@ -56,10 +55,10 @@ Both queries use a join between the cabs and trips tables to match trips to the 
 The LIKE operator is used in both queries to search for company names containing the specified substrings ('Yellow' and 'Blue', respectively). 
 The result set includes two columns: company_name (the name of the taxi company) and trips_amount (the number of trips made by that company during the specified period).
 */
--- Q3.For November 1-7, 2017, the most popular taxi companies were Flash Cab and Taxi Affiliation Services. 
+/* Q3.For November 1-7, 2017, the most popular taxi companies were Flash Cab and Taxi Affiliation Services. 
 Find the number of rides for these two companies and name the resulting variable trips_amount. 
 Join the rides for all other companies in the group "Other." Group the data by taxi company names. 
-Name the field with taxi company names company. Sort the result in descending order by trips_amount.--
+Name the field with taxi company names company. Sort the result in descending order by trips_amount.*/
 /* --------- SOLUTION --------- */
 SELECT 
     CASE 
@@ -89,8 +88,7 @@ and "Other." It joins the "cabs" and "trips" tables on the "cab_id" field to obt
 results to include only trips that occurred between November 1st, 2017 and November 7th, 2017. 
 Finally, the query orders the results in descending order by the number of trips for each company.
 */
---Q4.
-Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.
+/* Q4.Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.*/
 /* --------- SOLUTION --------- */
 SELECT neighborhood_id,name
 FROM neighborhoods 
@@ -100,9 +98,9 @@ This SQL query selects the neighborhood_id and name columns from the neighborhoo
 The query searches for all neighborhoods that have the word "Hare" at the end of their name or the word "Loop" at the beginning of their name. 
 The % sign is a wildcard character that matches any sequence of zero or more characters.*/
 
---Q5.For each hour, retrieve the weather condition records from the weather_records table. 
-Using the CASE operator, break all hours into two groups: Bad if the description field contains the words rain or storm, and Good for others. Name the 
-resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.--
+/* Q5.For each hour, retrieve the weather condition records from the weather_records table. Using the CASE operator, break all hours into 
+two groups: Bad if the description field contains the words rain or storm, and Good for others. Name the resulting field weather_conditions. 
+The final table must include two fields: date and hour (ts) and weather_conditions.*/
 /* --------- SOLUTION --------- */
 select
 ts,
@@ -119,9 +117,9 @@ each record's weather condition as "Good" or "Bad", based on whether the descrip
 will be a table with two columns: ts and weather_conditions, 
 where weather_conditions will have one of two possible values: "Good" or "Bad".
  */
- --Q6.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
+ /* Q6.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
  (dropoff_location_id: 63). Get the weather conditions for each ride. Use the method you applied in the previous task. Also, retrieve 
- the duration of each ride. Ignore rides for which data on weather conditions is not available.
+ the duration of each ride. Ignore rides for which data on weather conditions is not available.*/
 The table columns should be in the following order:
 start_ts
 weather_conditions
