@@ -6,7 +6,7 @@
 -------------------------------------------------------------------------
 -- Q1.
 Print the company_name field. Find the number of taxi rides for each taxi company for November 15-16, 2017, name the resulting field trips_amount and print it, too. 
-Sort the results by the trips_amount field in descending order. ?*/
+Sort the results by the trips_amount field in descending order. ?--
 /* --------- SOLUTION --------- */
 select cabs.company_name as company_name,count(trips.trip_id) as trips_amount
 from cabs
@@ -26,9 +26,8 @@ The GROUP BY clause groups the results by company name, and the COUNT function i
 Finally, the results are sorted in descending order based on the number of trips made by each company.
 /*
 
--- Q2.
-Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
-Name the resulting variable trips_amount. Group the results by the company_name field.*/
+-- Q2.Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
+Name the resulting variable trips_amount. Group the results by the company_name field.--
 /* --------- SOLUTION --------- */
 select 
 company_name,count( trips.trip_id) as trips_amount
@@ -60,7 +59,7 @@ The result set includes two columns: company_name (the name of the taxi company)
 -- Q3.For November 1-7, 2017, the most popular taxi companies were Flash Cab and Taxi Affiliation Services. 
 Find the number of rides for these two companies and name the resulting variable trips_amount. 
 Join the rides for all other companies in the group "Other." Group the data by taxi company names. 
-Name the field with taxi company names company. Sort the result in descending order by trips_amount.
+Name the field with taxi company names company. Sort the result in descending order by trips_amount.--
 /* --------- SOLUTION --------- */
 SELECT 
     CASE 
@@ -103,7 +102,7 @@ The % sign is a wildcard character that matches any sequence of zero or more cha
 
 --Q5.For each hour, retrieve the weather condition records from the weather_records table. 
 Using the CASE operator, break all hours into two groups: Bad if the description field contains the words rain or storm, and Good for others. Name the 
-resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
+resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.--
 /* --------- SOLUTION --------- */
 select
 ts,
@@ -127,7 +126,7 @@ The table columns should be in the following order:
 start_ts
 weather_conditions
 duration_seconds
-Sort by trip_id.
+Sort by trip_id.--
 /* --------- SOLUTION --------- */
 	SELECT
     start_ts,
