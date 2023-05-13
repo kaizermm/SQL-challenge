@@ -26,7 +26,7 @@ The GROUP BY clause groups the results by company name, and the COUNT function i
 Finally, the results are sorted in descending order based on the number of trips made by each company.
 /*
 
--- Q2..
+-- Q2.
 Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
 Name the resulting variable trips_amount. Group the results by the company_name field.*/
 /* --------- SOLUTION --------- */
@@ -90,7 +90,7 @@ and "Other." It joins the "cabs" and "trips" tables on the "cab_id" field to obt
 results to include only trips that occurred between November 1st, 2017 and November 7th, 2017. 
 Finally, the query orders the results in descending order by the number of trips for each company.
 */
-Q4.
+--Q4.
 Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.
 /* --------- SOLUTION --------- */
 SELECT neighborhood_id,name
@@ -100,7 +100,8 @@ WHERE name LIKE '%Hare' OR name LIKE 'Loop';
 This SQL query selects the neighborhood_id and name columns from the neighborhoods table. 
 The query searches for all neighborhoods that have the word "Hare" at the end of their name or the word "Loop" at the beginning of their name. 
 The % sign is a wildcard character that matches any sequence of zero or more characters.*/
-Q5.For each hour, retrieve the weather condition records from the weather_records table. 
+
+--Q5.For each hour, retrieve the weather condition records from the weather_records table. 
 Using the CASE operator, break all hours into two groups: Bad if the description field contains the words rain or storm, and Good for others. Name the 
 resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
 /* --------- SOLUTION --------- */
@@ -119,7 +120,7 @@ each record's weather condition as "Good" or "Bad", based on whether the descrip
 will be a table with two columns: ts and weather_conditions, 
 where weather_conditions will have one of two possible values: "Good" or "Bad".
  */
- Q6.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
+ --Q6.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
  (dropoff_location_id: 63). Get the weather conditions for each ride. Use the method you applied in the previous task. Also, retrieve 
  the duration of each ride. Ignore rides for which data on weather conditions is not available.
 The table columns should be in the following order:
@@ -147,6 +148,7 @@ INNER JOIN (
 WHERE 
     pickup_location_id = 50 AND dropoff_location_id = 63 AND EXTRACT (DOW from trips.start_ts) = 6
 ORDER BY trip_id;
+
 /*Explanation of the query:This SQL query retrieves information about trips that were taken on a specific day of the week (Saturday), 
 with a pickup location ID of 50 and a dropoff location ID of 63. It joins the "trips" table with a subquery that retrieves the weather
 conditions at the start of the trip by matching the trip start timestamp with the timestamp in the "weather_records" table. If the weather 
