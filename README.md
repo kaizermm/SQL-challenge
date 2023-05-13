@@ -81,8 +81,7 @@ View Table
   
   ![image](https://github.com/kaizermm/The-Zuber-Database/assets/121756502/2edba3f3-131c-40eb-b0d0-273d6213d7db)
 
- ### Users
-The details of the users who commented / wrote a post / voted 
+
 # Diagram
 ![image](https://user-images.githubusercontent.com/121756502/229656245-4a8b4edf-f292-44aa-a737-00ec2418b1d4.png)
  
