@@ -99,4 +99,8 @@ View Table
 5.For each hour, retrieve the weather condition records from the weather_records table. Using the CASE operator, break all hours into two groups: "Bad" if the description field contains the words "rain" or "storm," and "Good" for others. Name the resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
 
 6.Retrieve from the trips table all the rides that started in the Loop (neighborhood_id: 50) and ended at O'Hare (neighborhood_id: 63) on a Saturday. Get the weather conditions for each ride. Use the method you applied in the previous task. Also retrieve the duration of each ride. Ignore rides for which data on weather conditions is not available.
+
+## **:dart: INSIGHTS GENERATED**
+1.Bad weather conditions between 2017-11-18 12:00:00 AM and 2017-11-18 7:00:00 PM resulted in lower ride durations
+2.Between Flash Cab and Taxi Affiliation Services.Flash Cab has higher trip amount
  
