@@ -57,11 +57,38 @@ View Table
  | 3       |  1768   |  2017-11-03 14:00:00| 2017-11-03 15:00:00 | 318             |  0.9           | 0                  | 0                   |
  | 4       |  4274   |  2017-11-24 04:00:00| 2017-11-24 04:00:00 | 115             |  0.4           | 0                  | 0                   |
  | 5       |  3970   |  2017-11-12 03:00:00| 2017-11-12 03:00:00 | 475             |  1.6           | 0                  | 0                   |
-### Users
+
+ </details>
+ 
+ ### **4.weather_records**:
+ <details><summary>
+View Table
+ </summary>
+ data on rides
+ 
+ -Show the first 5 values
+  | record_id	|  ts                | temperature | description|
+  | --------- | -------------------| ------------| -------------| 
+  | 1         | 2017-11-01 00:00:00| 276.15	     | broken clouds| 
+  | 2         | 2017-11-01 01:00:00| 275.7       | scattered clouds|
+  | 3         | 2017-11-01 02:00:00| 275.61      | overcast clouds |
+  | 4         | 2017-11-01 03:00:00| 275.35      | broken clouds   |
+  | 5         | 2017-11-01 04:00:00| 275.24      | broken clouds   |
+ 
+  </details>
+  
+  # Table scheme
+  
+  ![image](https://github.com/kaizermm/The-Zuber-Database/assets/121756502/2edba3f3-131c-40eb-b0d0-273d6213d7db)
+
+ ### Users
 The details of the users who commented / wrote a post / voted 
 # Diagram
 ![image](https://user-images.githubusercontent.com/121756502/229656245-4a8b4edf-f292-44aa-a737-00ec2418b1d4.png)
-# :speech_balloon: BASICS ANALYSIS QUESTIONS
+ 
+ </details>
+
+# :speech_balloon:ANALYSIS QUESTIONS
 1.How many post were made each year ?
 
 2.How many votes were made in each day of the week (Sunday, Monday, Tuesday, etc.) ?
