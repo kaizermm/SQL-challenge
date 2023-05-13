@@ -26,9 +26,9 @@ The GROUP BY clause groups the results by company name, and the COUNT function i
 Finally, the results are sorted in descending order based on the number of trips made by each company.
 /*
 
--- Q2.For each hour, retrieve the weather condition records from the weather_records table. 
-Using the CASE operator, break all hours into two groups: "Bad" if the description field contains the words "rain" or "storm," and "Good" for others. 
-Name the resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions. ?*/
+-- Q2..
+Find the number of rides for every taxi companies whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. 
+Name the resulting variable trips_amount. Group the results by the company_name field.*/
 /* --------- SOLUTION --------- */
 select 
 company_name,count( trips.trip_id) as trips_amount
