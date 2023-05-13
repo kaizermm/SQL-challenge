@@ -1,15 +1,62 @@
 # The Zuber Database
 # Introduction
-Stack Exchange Is a network of sites, allowing different communities learn and share their knowledge.
-Movies & TV Stack Exchange – is one of these sites, focused entirely on questions and answers regarding movies and series. The following database is built according to its structure, and simulates some of the data it has.
+As an analyst for Zuber, a newly established ride-sharing company in Chicago, your responsibility is to analyze the available data to uncover patterns and insights. Your primary objective is to gain a better understanding of passenger preferences and determine how external factors influence ride frequency. To achieve this, you will work with a database containing information from competitors to identify trends and test a hypothesis on the impact of weather on ride demand. By leveraging data analytics, you will help Zuber make data-driven decisions to improve their services and outperform their competitors in the ride-sharing industry
 # **:file_folder: DATASETS**
 The data set contains the following 4 tables which you may refer to the relationship diagram below to understand the connection.
-### Votes
-Each vote consists of a voting ID, user number (FK), post number (FK), and a date of creation
-### posts
-Each post can have different comments, each post can be voted by different users (in order to improve its ranking) 
-### Comments
-The details regarding the various posts comments
+### **1.neighborhoods table**: 
+<details><summary>
+View Table
+ </summary> 
+ data on city neighborhoods
+ 
+ -Show the first 5 values
+   
+ | neighborhood_id	|  name |
+ | --------------- |  --------- |
+ | 0	              | Albany Park |
+ | 1	              | Andersonville |
+ | 2	              | Archer Heights |
+ | 3	              | Armour Square |
+ | 4	              | Ashburn       |
+ | 5	              | Auburn Gresham |
+
+ </details>
+
+### **2.cabs**:
+<details><summary>
+View Table
+ </summary>
+ data on rides
+ 
+ -Show the first 5 values
+ 
+ -vehicle_id was cut short 11 characters.
+ 
+  | cab_id	|  vehicle_id | company_name |
+  | ------ |  -----------| ------------ |
+  | 0      |  0fc17a66d66...| Dispatch Taxi Affiliation |
+  | 1      |  38f6145c9a2...| Taxi Affiliation Services |
+  | 2      |  11c21d0290e...| Star North Management LLC |
+  | 3      |  43c12494b50...| Dispatch Taxi Affiliation |
+  | 4      |  a48710b8f31...| Blue Ribbon Taxi Association Inc |
+  | 5      |  c591191b4ca...| Blue Ribbon Taxi Association Inc |
+ 
+ </details>
+ 
+### **3.trips**:
+<details><summary>
+View Table
+ </summary>
+ data on rides
+ 
+ -Show the first 5 values
+ | trip_id	|  cap_id | start_td            | end_ts	            | duration_seconds	| distance_miles | pickup_location_id | dropoff_location_id |
+ | ------ |  --------| ------------------- | -----------------  | -----------------| ---------------| -------------------| --------------------|
+ | 1       |  1514   |  2017-11-07 21:00:00| 2017-11-07 21:00:00 | 81              |  0.04          | 0                  | 0                   |
+ | 2       |  1514   |  2017-11-07 21:00:00| 2017-11-07 21:00:00 | 671             |  0.65          | 0                  | 0                   |
+ | 3       |  1768   |  2017-11-03 14:00:00| 2017-11-03 15:00:00 | 318             |  0.9           | 0                  | 0                   |
+ | 4       |  4274   |  2017-11-24 04:00:00| 2017-11-24 04:00:00 | 115             |  0.4           | 0                  | 0                   |
+ | 5       |  3970   |  2017-11-12 03:00:00| 2017-11-12 03:00:00 | 475             |  1.6           | 0                  | 0                   |
 ### Users
 The details of the users who commented / wrote a post / voted 
 # Diagram
