@@ -18,7 +18,7 @@ company_name
 order by
 trips_amount
 desc;
-/*Explaination of the query:
+/*Explanation of the query:
 This SQL query is used to retrieve the number of trips made by each taxi company during a specific time period. 
 The query uses the "cabs" and "trips" tables, joining them based on the "cab_id" column. 
 The WHERE clause is used to filter the trips that started between November 15th and November 16th, 2017. 
@@ -49,7 +49,7 @@ cabs.company_name LIKE '%Blue%' and
 trips.start_ts >= '2017-11-01' AND trips.start_ts < '2017-11-08'
 group by
 company_name;
-/*Explaination of the query:
+/*Explanation of the query:
 This SQL query retrieves the number of trips made by the Yellow and Blue taxi companies between November 1 and November 7, 2017. 
 It uses a union to combine the results of two queries. 
 The first query counts the number of trips made by Yellow taxis during the specified period, while the second query counts the number of trips made by Blue taxis during the same period. 
@@ -82,25 +82,74 @@ GROUP BY
     END
 ORDER BY 
     trips_amount DESC;
-/*Explaination of the query:
+/*Explanation of the query:
 this SQL query retrieves the number of taxi rides by company for a specified date range. 
 The result groups the rides by company name and counts the number of trips for each group. 
-The query uses a conditional statement in the SELECT clause to group the companies into three categories: "Flash Cab," "Taxi Affiliation Services," and "Other." 
-It joins the "cabs" and "trips" tables on the "cab_id" field to obtain information about the taxi rides.
-The WHERE clause filters the results to include only trips that occurred between November 1st, 2017 and November 7th, 2017. 
+The query uses a conditional statement in the SELECT clause to group the companies into three categories: "Flash Cab," "Taxi Affiliation Services," 
+and "Other." It joins the "cabs" and "trips" tables on the "cab_id" field to obtain information about the taxi rides.The WHERE clause filters the 
+results to include only trips that occurred between November 1st, 2017 and November 7th, 2017. 
 Finally, the query orders the results in descending order by the number of trips for each company.
 */
-Q4.Display the number of votes for each post title*
-SELECT pst.Title,count(*) number_of_votes
-FROM [data_analysis_stack_exchange_movies].[dbo].[Votes] as vt
-join
-[data_analysis_stack_exchange_movies].[dbo].posts as pst
-on 
-vt.Id=pst.Id
-group by
-pst.Title
-order by
-count(*)
-desc
-
-
+Q4.
+Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.
+/* --------- SOLUTION --------- */
+SELECT neighborhood_id,name
+FROM neighborhoods 
+WHERE name LIKE '%Hare' OR name LIKE 'Loop';
+/* Explanation of the query:
+This SQL query selects the neighborhood_id and name columns from the neighborhoods table. 
+The query searches for all neighborhoods that have the word "Hare" at the end of their name or the word "Loop" at the beginning of their name. 
+The % sign is a wildcard character that matches any sequence of zero or more characters.*/
+Q5.For each hour, retrieve the weather condition records from the weather_records table. 
+Using the CASE operator, break all hours into two groups: Bad if the description field contains the words rain or storm, and Good for others. Name the 
+resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
+/* --------- SOLUTION --------- */
+select
+ts,
+case
+    when description like '%rain%' or description like '%storm%' then
+'Bad'
+    else 'Good'
+ End as weather_conditions
+ from 
+ weather_records;
+ /*Explanation ofthe query:
+ This SQL query selects the ts (timestamp) and description columns from a table called weather_records. It then uses a CASE statement to categorize 
+each record's weather condition as "Good" or "Bad", based on whether the description column contains the words "rain" or "storm". The result 
+will be a table with two columns: ts and weather_conditions, 
+where weather_conditions will have one of two possible values: "Good" or "Bad".
+ */
+ Q6.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
+ (dropoff_location_id: 63). Get the weather conditions for each ride. Use the method you applied in the previous task. Also, retrieve 
+ the duration of each ride. Ignore rides for which data on weather conditions is not available.
+The table columns should be in the following order:
+start_ts
+weather_conditions
+duration_seconds
+Sort by trip_id.
+/* --------- SOLUTION --------- */
+	SELECT
+    start_ts,
+    Ta.weather_conditions,
+    duration_seconds
+FROM 
+    trips
+INNER JOIN (
+    SELECT
+        ts,
+        CASE
+            WHEN description LIKE '%rain%' OR description LIKE '%storm%' THEN 'Bad'
+            ELSE 'Good'
+        END AS weather_conditions
+    FROM 
+        weather_records          
+) as Ta ON Ta.ts = trips.start_ts
+WHERE 
+    pickup_location_id = 50 AND dropoff_location_id = 63 AND EXTRACT (DOW from trips.start_ts) = 6
+ORDER BY trip_id;
+/*Explanation of the query:This SQL query retrieves information about trips that were taken on a specific day of the week (Saturday), 
+with a pickup location ID of 50 and a dropoff location ID of 63. It joins the "trips" table with a subquery that retrieves the weather
+conditions at the start of the trip by matching the trip start timestamp with the timestamp in the "weather_records" table. If the weather 
+description contains the words "rain" or "storm", the weather conditions are classified as "Bad", otherwise they are classified as "Good". 
+The result set includes the trip start timestamp, the weather conditions, and the duration of the trip, sorted by trip ID.
+*/
