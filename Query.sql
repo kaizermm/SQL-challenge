@@ -54,14 +54,11 @@ drop_location
 order by
 n_trip
 desc;
-
 /*Explanation of the query:
 This SQL query combines data from multiple tables, including "cabs," "trips," and "neighborhoods". 
 It retrieves the name of the drop-off locations from the "neighborhoods" table and counts the number of trips to each location. 
 The results are grouped by drop-off location and ordered in descending order based on the count of trips (n_trip). 
 This query provides valuable insights into the neighborhoods with the highest number of trips, helping to identify popular drop-off locations for cab services.
-
-
 /* Q4.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
  (dropoff_location_id: 63). Get the weather conditions for each ride. Use the method you applied in the previous task. Also, retrieve 
  the duration of each ride. Ignore rides for which data on weather conditions is not available.*/
