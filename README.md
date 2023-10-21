@@ -81,24 +81,36 @@ View Table
   
   ![image](https://github.com/kaizermm/The-Zuber-Database/assets/121756502/2edba3f3-131c-40eb-b0d0-273d6213d7db)
 
-
-# Diagram
-![image](https://user-images.githubusercontent.com/121756502/229656245-4a8b4edf-f292-44aa-a737-00ec2418b1d4.png)
- 
- </details>
-
 # :speech_balloon:ANALYSIS QUESTIONS
-1.Find the number of taxi rides for each taxi company for November 15-16, 2017. Name the resulting field trips_amount and print it along with the company_name field. Sort the results by the trips_amount field in descending order. **
+1. Find the number of taxi rides for each taxi company. Name the resulting field trips_amount and print it along with the company_name field. Sort the results by the trips_amount field in descending order. **
 
-2.Find the number of rides for every taxi company whose name contains the words "Yellow" or "Blue" for November 1-7, 2017. Name the resulting variable trips_amount. Group the results by the company_name field.
+2. Could you please generate the SQL query that retrieves the pickup location names and the total number of trips taken to each pickup location, while also joining the 'cabs,' 'trips,' and 'neighborhoods' tables to associate the data correctly and sorting the results in descending order of trip count?
 
-3.In November 2017, the most popular taxi companies were Flash Cab and Taxi Affiliation Services. Find the number of rides for these two companies and name the resulting variable trips_amount. Join the rides for all other companies in the group "Other." Group the data by taxi company names. Name the field with taxi company names company. Sort the result in descending order by trips_amount.
+3. Could you please create an SQL query to retrieve the drop-off locations with the highest number of trips, using the "neighborhoods" dataset's "name" column, joined with the "cabs" and "trips" tables? The query should calculate the count of trips for each drop-off location and order the results in descending order of trip count.
 
-4.Retrieve the identifiers of the O'Hare and Loop neighborhoods from the neighborhoods table.
+4. Retrieve from the trips table all the rides that started in the Loop (neighborhood_id: 50) and ended at O'Hare (neighborhood_id: 63) on a Saturday. Get the weather conditions for each ride. Use the method you applied in the previous task. Also retrieve the duration of each ride. Ignore rides for which data on weather conditions is not available.
 
-5.For each hour, retrieve the weather condition records from the weather_records table. Using the CASE operator, break all hours into two groups: "Bad" if the description field contains the words "rain" or "storm," and "Good" for others. Name the resulting field weather_conditions. The final table must include two fields: date and hour (ts) and weather_conditions.
+## **:dart: INSIGHTS GENERATED**
+While PostgreSQL was instrumental in extracting data, it fell short in providing crucial visualizations and in-depth statistical analyses. Our objectives included pinpointing the most frequented pickup and drop-off locations, determining the leading taxi company, and rigorously testing a hypothesis concerning the average ride duration between the Loop and O'Hare International Airport on rainy Saturdays.
 
-6.Retrieve from the trips table all the rides that started in the Loop (neighborhood_id: 50) and ended at O'Hare (neighborhood_id: 63) on a Saturday. Get the weather conditions for each ride. Use the method you applied in the previous task. Also retrieve the duration of each ride. Ignore rides for which data on weather conditions is not available.
+1. After using PostgreSQL, to pull out the 4 data sets:
+### Dropoff_location.csv.It contains the following data:
+* drop_location: Chicago neighborhoods where rides ended
+* n_trip:total number of rides that ended in each neighborhood
+
+### Rides_per_company.csv.It contains the following data
+* company: taxi company name
+* trips_amount:the number of rides for each taxi company
+
+### Pickup_location.csv:It contains the following data
+* pickup_location: Chicago neighborhoods where rides started
+* n_trop: number of rides that ended in each neighborhood
+
+### Weather_condition.csv:It contains the following data
+* start_ts:date and time of the beginning of the ride that started in the Loop and ended at O'Hare
+* Weather_conditions: When the description matches 'rain' or contains '%storm%', we categorize it as 'Bad'; otherwise, it's classified as 'Good'.
+* duration_second:ride duration in seconds where ride that started in the Loop and ended at O'Hare
+ 
 
 ## **:dart: INSIGHTS GENERATED**
 1.Bad weather conditions between 2017-11-18 12:00:00 AM and 2017-11-18 7:00:00 PM resulted in lower ride durations
