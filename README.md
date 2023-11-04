@@ -81,7 +81,7 @@ View Table
   
   ![image](https://github.com/kaizermm/The-Zuber-Database/assets/121756502/2edba3f3-131c-40eb-b0d0-273d6213d7db)
 
-# :speech_balloon:ANALYSIS QUESTIONS
+# :speech_balloon:ANALYSIS QUESTIONS for SQL
 1. Find the number of taxi rides for each taxi company. Name the resulting field trips_amount and print it along with the company_name field. Sort the results by the trips_amount field in descending order. **
 
 2. Could you please generate the SQL query that retrieves the pickup location names and the total number of trips taken to each pickup location, while also joining the 'cabs,' 'trips,' and 'neighborhoods' tables to associate the data correctly and sorting the results in descending order of trip count?
