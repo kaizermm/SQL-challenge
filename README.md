@@ -111,9 +111,4 @@ While PostgreSQL was instrumental in extracting data, it fell short in providing
 * Weather_conditions: When the description matches 'rain' or contains '%storm%', we categorize it as 'Bad'; otherwise, it's classified as 'Good'.
 * duration_second:ride duration in seconds where ride that started in the Loop and ended at O'Hare
  
-
-## **:dart: INSIGHTS GENERATED**
-1.Bad weather conditions between 2017-11-18 12:00:00 AM and 2017-11-18 7:00:00 PM resulted in lower ride durations
-
-2.Between Flash Cab and Taxi Affiliation Services.Flash Cab has higher trip amount
  
