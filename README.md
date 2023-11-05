@@ -7,7 +7,7 @@ The data set contains the following 4 tables which you may refer to the relation
 <details><summary>
 View Table
  </summary> 
- data on city neighborhoods
+ data on city neighbourhoods
  
  -Show the first 5 values
    
@@ -113,11 +113,20 @@ While PostgreSQL was instrumental in extracting data, it fell short in providing
 * duration_second: ride duration in seconds where ride that started in the Loop and ended at O'Hare
 
 Step for data analysis
-1. Load the data and Prepocessing
+1. Load the data and Preprocessing
 2. Top ten companies with highest number of rides.
 3. Number of trips for each dropoff location
 4. Number of trips for each each pickup location
 5. Prepare data for testing hypotheses
+## Conclusion and further improvement
+Conclusion: The project identified Loop and River North as the top drop-off locations, with Flash Cab leading in trip numbers. Notably, ride durations between the Loop and O'Hare Airport vary on rainy Saturdays, implying weather's impact on ride durations.
 
- 
- 
+Improvement Area: Further analysis and predictive models could explore and quantify the precise influence of weather conditions on ride durations, allowing for more informed decision-making and service optimization.
+
+## Preview
+![image](https://github.com/kaizermm/Zuber-Rideshare-Analysis/assets/121756502/07fdd33d-2c7b-4ee0-95d5-a0d7cb5f71ec)
+
+
+![image](https://github.com/kaizermm/Zuber-Rideshare-Analysis/assets/121756502/f7ec6e80-fb33-47f9-b197-9ad20feb824b)
+
+
