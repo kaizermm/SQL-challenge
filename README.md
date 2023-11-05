@@ -124,7 +124,7 @@ Conclusion: The project identified Loop and River North as the top drop-off loca
 Improvement Area: Further analysis and predictive models could explore and quantify the precise influence of weather conditions on ride durations, allowing for more informed decision-making and service optimization.
 
 ## Preview
-![image](https://github.com/kaizermm/Zuber-Rideshare-Analysis/assets/121756502/07fdd33d-2c7b-4ee0-95d5-a0d7cb5f71ec)
+![image](https://github.com/kaizermm/Zuber-Rideshare-Analysis/assets/121756502/07fdd33d-2c7b-4ee0-95d5-a0d7cb5f71ec){width=300}
 
 
 ![image](https://github.com/kaizermm/Zuber-Rideshare-Analysis/assets/121756502/f7ec6e80-fb33-47f9-b197-9ad20feb824b){width=300}
