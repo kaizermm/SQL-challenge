@@ -5,7 +5,7 @@
 --------------------------------------------------------------------------
 -- Analysis QUESTIONS --
 -------------------------------------------------------------------------
-/* Q1.Print the company_name field. Find the number of taxi rides for each taxi company for November 15-16, 2017, name the resulting field trips_amount and print it, too. 
+/* Q1.Find the number of taxi rides for each taxi company for November 15-16, 2017, name the resulting field trips_amount and print it, too. 
 Sort the results by the trips_amount field in descending order. ?*/
 /* --------- SOLUTION --------- */
 select cabs.company_name as company_name,count(trips.trip_id) as trips_amount
@@ -17,7 +17,7 @@ order by
 trips_amount
 desc;
 /*Explanation of the query:
-This SQL query is used to retrieve the number of trips made by each taxi company during a specific time period. 
+This SQL query is used to retrieve the number of trips made by each taxi company during a specific period. 
 The query uses the "cabs" and "trips" tables, joining them based on the "cab_id" column. 
 The GROUP BY clause groups the results by company name, and the COUNT function is used to count the number of trips made by each company. 
 Finally, the results are sorted in descending order based on the number of trips made by each company.
@@ -59,6 +59,7 @@ This SQL query combines data from multiple tables, including "cabs," "trips," an
 It retrieves the name of the drop-off locations from the "neighborhoods" table and counts the number of trips to each location. 
 The results are grouped by drop-off location and ordered in descending order based on the count of trips (n_trip). 
 This query provides valuable insights into the neighborhoods with the highest number of trips, helping to identify popular drop-off locations for cab services.
+
 /* Q4.Retrieve from the trips table all the rides that started in the Loop (pickup_location_id: 50) on a Saturday and ended at O'Hare 
  (dropoff_location_id: 63). Get the weather conditions for each ride. Use the method you applied in the previous task. Also, retrieve 
  the duration of each ride. Ignore rides for which data on weather conditions is not available.*/
@@ -88,7 +89,7 @@ WHERE
     pickup_location_id = 50 AND dropoff_location_id = 63 AND EXTRACT (DOW from trips.start_ts) = 6
 ORDER BY trip_id;
 
-/*Explanation of the query:This SQL query retrieves information about trips that were taken on a specific day of the week (Saturday), 
+/*Explanation of the query: This SQL query retrieves information about trips that were taken on a specific day of the week (Saturday), 
 with a pickup location ID of 50 and a dropoff location ID of 63. It joins the "trips" table with a subquery that retrieves the weather
 conditions at the start of the trip by matching the trip start timestamp with the timestamp in the "weather_records" table. If the weather 
 description contains the words "rain" or "storm", the weather conditions are classified as "Bad", otherwise they are classified as "Good". 
